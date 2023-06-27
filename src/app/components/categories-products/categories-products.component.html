@@ -1,0 +1,43 @@
+<main>
+<app-navbar></app-navbar>
+<div *ngIf="loading;else elseBlock">
+  <app-loading-page></app-loading-page>
+</div>
+
+<ng-template #elseBlock>
+  <div class="text-center">
+    <h1 class="category-title">{{category}}:</h1>
+  </div>
+
+  <div class="mt-2" *ngFor="let product of Products">
+    <div class="card mb-3 ms-auto me-auto" style="max-width: 540px;">
+      <div class="row g-0" >
+        <div class="col-md-4">
+          <img src="{{product.image}}" class="img-fluid rounded-start product-img" alt="">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div (click)="viewProduct(product.prodId)">
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text price"><span class="price-label me-1">price:</span>{{rate(product.price,product.discount)|currency:'INR':'symbol':'3.2-2'}}</p>
+              <div class="d-flex align-items-center">
+                <p class="org-price me-2">&#8377;{{product.price}}</p>
+                <p class="discount"><span class="minus">-</span>{{product.discount}}<span class="percent">%</span></p>
+              </div>
+            </div>
+            <div class="d-flex">
+              <button class="btn btn-outline-danger me-2" (click)="addToWishList(product)">Save For Later</button>
+              <button class="btn btn-outline-success" (click)="addToCart(product)">Add To Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="push"></div>
+</ng-template>
+</main>
+<div class="adjust-footer">
+  <app-footer></app-footer>
+</div>
+

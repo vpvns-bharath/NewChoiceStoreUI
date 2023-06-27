@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home"><img src="../../assets/logo.png" alt="logo" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#products">Products</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/categories/mobiles" (click)="updateCategory('Mobile')">Mobiles</a></li>
+            <li><a class="dropdown-item" routerLink="/categories/men'sFashion" (click)="updateCategory('Men\'s Fashion')">Men's Fashion</a></li>
+            <li><a class="dropdown-item" routerLink="/categories/women'sFashion" (click)="updateCategory('Women\'s Fashion')">Women's Fashion</a></li>
+            <li><a class="dropdown-item" routerLink="/categories/footwear" (click)="updateCategory('Footwear')">Footwear</a></li>
+            <li><a class="dropdown-item" routerLink="/categories/laptops" (click)="updateCategory('Laptops')">Laptops</a></li>
+
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/wishList">WishList<span class="m-1 badge bg-secondary">{{cartService.wishListItemsLength}}</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart">Cart<span class=" m-1 badge bg-secondary">{{cartService.cartLength}}</span></a>
+        </li>
+
+        <li class="nav-item dropdown-center">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <b>Welcome,{{userName}}!</b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/my-orders">My Orders</a></li>
+            <li><a class="dropdown-item" (click)="signOut()" routerLink="/login">Signout</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><img src="../../assets/profile.jpg" alt="profile" class="profile"></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

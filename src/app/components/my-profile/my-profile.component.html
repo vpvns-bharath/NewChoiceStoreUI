@@ -1,0 +1,67 @@
+<main>
+  <app-navbar></app-navbar>
+
+  <form [formGroup]="profileForm">
+    <div class="row profile">
+
+      <div class="col-4">
+        <div class="mt-5 mb-2 ms-5">
+          <img src="../../../assets/profile.jpg" alt="" class="profile-img">
+          <div class="ms-2 ">
+            <p class="ms-2">{{user.email}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="heading mt-3 mb-3">
+          <h3>User Details</h3>
+        </div>
+
+          <div class="mt-2">
+           <div class="row">
+            <div class="col">
+              <label for="fname">FirstName</label>
+              <input type="text" class="form-control" id="fname" formControlName="firstName" [placeholder]="user.firstName">
+            </div>
+            <div class="col">
+              <label for="lname">LastName</label>
+              <input type="text" class="form-control" id="lname" formControlName="lastName" [placeholder]="user.lastName">
+            </div>
+           </div>
+           <div class="row mt-1">
+            <div class="col">
+              <label for="add">Address</label>
+              <input  class="form-control" id="add" formControlName="address" [placeholder]="user.address">
+            </div>
+            <div class="col">
+              <label for="gender">Gender</label>
+              <select class="form-select" id="gender" formControlName="gender">
+                <option [selected]="(user.gender=='')?true:false">None</option>
+                <option value="Male" [selected]="(user.gender=='Male')?true:false">Male</option>
+                <option value="Female" [selected]="(user.gender=='Female')?true:false">Female</option>
+              </select>
+            </div>
+           </div>
+           <div class="row mt-1">
+            <div class="col">
+              <label for="mobile">Mobile</label>
+              <input type="text" class="form-control" id="mobile" formControlName="mobile" [placeholder]="user.mobile">
+            </div>
+            <div class="col">
+              <label for="dname">DisplayName</label>
+              <input type="text" class="form-control" id="dname" formControlName="displayName" [placeholder]="user.displayName">
+            </div>
+           </div>
+           <button type="submit" class="btn btn-secondary mt-3 mb-2" (click)="updateDetails()" >SaveChanges</button>
+          </div>
+
+      </div>
+    </div>
+  </form>
+
+  <div class="push"></div>
+</main>
+
+<div class="adjust-footer">
+  <app-footer></app-footer>
+</div>

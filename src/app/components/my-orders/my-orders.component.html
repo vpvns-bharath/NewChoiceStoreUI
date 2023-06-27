@@ -1,0 +1,45 @@
+<main>
+<app-navbar></app-navbar>
+<div class="" style="text-align: center;margin-top: 200px;" *ngIf="!itemsPresent">
+  <h1>No Orders Placed Yet..</h1>
+</div>
+
+<div *ngIf="itemsPresent">
+  <div class="order-card " *ngFor="let order of orders">
+    <div class="d-flex fdiv">
+      <div>
+        <div class="ordered-products pb-3" *ngFor="let product of order.orderedProducts">
+          <div class="card mt-3 ms-5" style="max-width: 540px;">
+            <div class="row g-0" >
+              <div class="col-md-4">
+                <img src="{{product.image}}" class="img-fluid rounded-start product-img" alt="">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.title}}</h5>
+                    <p class="card-text price"><span class="price-label me-1">price:</span>{{rate(product.price,product.discount)|currency:'INR':'symbol':'3.2-2'}}</p>
+                    <div class="d-flex align-items-center">
+                      <p class="org-price me-2">&#8377;{{product.price}}</p>
+                      <p class="discount"><span class="minus">-</span>{{product.discount}}<span class="percent">%</span></p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-details mt-3">
+        <label>Ordered On:</label>
+        <h2 class="details">{{order.orderedAt}}</h2>
+        <label>Amount Billed:</label>
+        <h2 class="details">{{order.amountPaid|currency:'INR':'symbol':'3.2-2'}}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="push"></div>
+</main>
+
+<div class="adjust-footer">
+  <app-footer></app-footer>
+</div>

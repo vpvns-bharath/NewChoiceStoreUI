@@ -1,0 +1,140 @@
+<app-navbar></app-navbar>
+<div class="home-div">
+
+  <!-- banner -->
+  <div class="banner d-flex mt-4">
+    <div class="banner-img">
+      <img src="../../assets/banner.png" alt="" class="bannerimg">
+    </div>
+    <div class="ms-5 banner-text">
+      <h1 class="ms-5 me-5 mt-5">Online</h1>
+      <h1 class="ms-5 me-5">Shopping Sale</h1>
+      <h5 class="ms-5 me-5">Up To 50% Off</h5>
+      <p class="ms-5 me-5 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit.Debitis vitae tenetur seesa,
+        similique labore reiciendis veritatis illo consectetur voluptas,cupiditate blanditiis numquam
+        nisi! Totam, doloremque.Eveniet porro optio magnam harum. Nulla.
+      </p>
+      <button class="ms-5 mt-2 btn btn-danger button">Shop Now</button>
+    </div>
+  </div>
+
+  <!-- products carousel -->
+
+  <div class="products mt-3 mb-3" id="products">
+    <h1>Our Products</h1>
+  </div>
+
+  <div id="carouselExampleCaptions" class="carousel slide mb-3" data-bs-ride="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../assets/mobile-banner.jpg" class="d-block w-100 carousel-img" alt="">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="btn mob-btn " routerLink="/categories/mobiles" (click)="updateCategory('Mobile')">Check it Out</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/mensfashion-banner.jpg" class="d-block w-100 carousel-img" alt="">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="btn mob-btn " routerLink="/categories/men'sFashion" (click)="updateCategory('Men\'s Fashion')" >Check it Out</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/womensfashion-banner.png" class="d-block w-100 carousel-img" alt="">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="btn mob-btn " routerLink="/categories/women'sFashion" (click)="updateCategory('Women\'s Fashion')">Check it Out</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/footwearbanner.png" class="d-block w-100 carousel-img" alt="">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="btn mob-btn" routerLink="/categories/footwear" (click)="updateCategory('Footwear')">Check it Out</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/laptopsbanner.png" class="d-block w-100 carousel-img" alt="">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="btn mob-btn " routerLink="/categories/laptops" (click)="updateCategory('Laptops')">Check it Out</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- testimonials -->
+  <div class="testimonials mt-3 mb-3 center" >
+    <h1>Testimonials</h1>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-4">
+      <div class="card ms-auto me-auto" style="width: 18rem;">
+        <img src="../../assets/t1.png" class="card-img-top test-img" alt="...">
+        <div class="card-body text-center">
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eaque placeat fuga nesciunt quis culpa totam blanditiis.</p>
+          <div class="rating">
+            <article>Rating:</article>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star"></i>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card ms-auto me-auto" style="width: 18rem;">
+        <img src="../../assets/t2.png" class="card-img-top test-img" alt="...">
+        <div class="card-body text-center">
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eaque placeat fuga nesciunt quis culpa totam blanditiis.</p>
+          <div class="rating">
+            <article>Rating:</article>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-half"></i>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card ms-auto me-auto" style="width: 18rem;">
+        <img src="../../assets/t3.png" class="card-img-top test-img" alt="...">
+        <div class="card-body text-center">
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eaque placeat fuga nesciunt quis culpa totam blanditiis.</p>
+          <div class="rating">
+            <article>Rating:</article>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill me-1"></i>
+            <i class="bi bi-star-fill"></i>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="adjust-footer">
+  <app-footer></app-footer>
+</div>
+
+

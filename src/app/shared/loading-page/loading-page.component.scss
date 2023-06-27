@@ -1,0 +1,28 @@
+.adjust-footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.load-icon{
+  font-size: 100px;
+}
+
+.loading{
+  position: absolute;
+  top: 30%;
+  left: 46%;
+
+
+  i{
+    display: inline-block;
+    animation: spinner 0.5s infinite;
+  }
+}
+
+
+@keyframes spinner{
+  0%{
+    transform: rotate(-180deg);
+  }
+}

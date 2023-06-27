@@ -1,0 +1,36 @@
+<div class="signup-page">
+  <div class="signup-section">
+    <div class="signup-container">
+      <div class="heading">
+        <h1><b>Welcome To</b></h1>
+        <img src="../../../assets/logo.png" alt="" class="store-img">
+      </div>
+      <div class="signup-form">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()" ngNativeValidate>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
+            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" formControlName="email" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-key-fill"></i></span>
+            <input type="password" class="form-control" placeholder="Password" aria-label="password" aria-describedby="basic-addon1" formControlName="password" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-key-fill"></i></span>
+            <input type="password" class="form-control" placeholder="Confirm Password" aria-label="Confirm password" aria-describedby="basic-addon1" formControlName="confirmPassword" required>
+          </div>
+
+          <button class="btn btn-success" type="submit">Submit</button>
+
+          <p class="mt-2">Already a member? <a routerLink="/login">Login</a></p>
+
+        </form>
+      </div>
+      <p *ngIf="signUpForm.get('email')?.touched &&signUpForm.get('email')?.invalid " style="color: red;">Please Enter Email in Valid Format</p>
+    <div *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid" class=" mt-5 notify">
+      <p>Please enter password in correct format. <br>
+        Check format here -> <i class="info bi bi-info-circle-fill" title="password should contain atleast &#10; one uppercase letter &#10; one lowercase letter &#10; one special character &#10; one numerical digit &#10; be length of 8  "></i></p>
+    </div>
+    </div>
+  </div>
+</div>

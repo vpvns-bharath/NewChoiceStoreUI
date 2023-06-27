@@ -1,0 +1,33 @@
+.heading{
+  text-align: center;
+}
+
+.login-container{
+  width: 500px;
+  margin: 0 auto;
+  border: 2px solid grey;
+  padding:10px;
+  text-align: center;
+  background-color: white;
+
+}
+
+.login-page{
+  background-image: url(../../../assets/commerce.avif);
+  height: 100vh;
+
+}
+
+.login-section{
+  padding-top: 200px;
+  height: 100vh;
+}
+
+.store-img{
+  width: 250px;
+}
+
+.form-control:focus{
+ border-color:grey;
+ box-shadow: 0 0 0 0 white;
+}

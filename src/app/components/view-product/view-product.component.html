@@ -1,0 +1,71 @@
+<main>
+  <app-navbar></app-navbar>
+
+<div *ngIf="loading;else elseBlock">
+  <app-loading-page></app-loading-page>
+</div>
+
+<ng-template #elseBlock>
+
+  <div class="row product mt-3 mb-3">
+    <div class="col-4 text-center">
+      <img class="prod-img" src="{{product.image}}" alt="">
+    </div>
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">{{product.title}}</h2>
+          <h6 class="card-subtitle mb-2 text-muted">
+           <label class="me-2">rating:</label> <i *ngFor="let star of getStarRating(product.rating)" [ngClass]="star" style="color: gold;"></i>
+          </h6>
+          <p class="card-text price"><span class="price-label">price:</span> {{rate(product.price,product.discount) | currency:'INR':'symbol':'3.2-2'}}</p>
+          <div class="d-flex align-items-center">
+            <p class="org-price me-2">&#8377;{{product.price}}</p>
+            <p class="discount"><span class="minus">-</span>{{product.discount}}<span class="percent">%</span></p>
+          </div>
+          <p class="card-text description">{{product.description}}</p>
+        </div>
+      </div>
+
+      <div class="warrant">
+        <img src="../../../assets/warrents.png" alt="" class="warrant-img">
+      </div>
+
+      <div class="buttons mt-3">
+        <button class="cart-btn" (click)="addToCart(product)">Add To Cart</button>
+        <button class="ms-2 fav-btn" (click)="addToWishList(product)">Save For Later</button>
+      </div>
+
+    </div>
+  </div>
+
+  <h1 class="mt-5 ms-3 mb-5"><b>Related Products:</b></h1>
+
+  <div class="related-prod mb-5 d-flex justify-content-center">
+    <div class="indv-prod" *ngFor="let product of relatedProducts[0]">
+
+      <div class="card related-prod-card ms-3" >
+        <img src="{{product.image}}" class="card-img-top card-img mt-2" alt="..." >
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text price"><span class="price-label me-1">price:</span>{{rate(product.price,product.discount)|currency:'INR':'symbol':'3.2-2'}}</p>
+          <div class="ms-5 d-flex align-items-center ">
+            <p class="org-price me-2">&#8377;{{product.price}}</p>
+            <p class="discount"><span class="minus">-</span>{{product.discount}}<span class="percent">%</span></p>
+          </div>
+          <a class="btn btn-primary"  (click)="viewProduct(product.prodId)">Try This</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="push"></div>
+
+</ng-template>
+
+</main>
+
+<div class="adjust-footer">
+  <app-footer></app-footer>
+</div>
